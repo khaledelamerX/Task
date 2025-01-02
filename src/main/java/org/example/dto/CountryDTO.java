@@ -15,5 +15,6 @@ import java.util.List;
 public class CountryDTO implements Serializable {
     private Long id;
     private String isoCode;
+    private String name;
     private List<Company> companies;
 }

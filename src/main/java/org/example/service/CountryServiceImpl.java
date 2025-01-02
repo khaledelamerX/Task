@@ -51,4 +51,10 @@ public class CountryServiceImpl implements CRUDInterface<CountryDTO> {
         Country updatedCountry = countryRepository.save(country);
         return countryMapper.toCountryDTO(updatedCountry);
     }
+    @Override
+    public String getName(String isoCode) {
+        Country country = countryRepository.findByIsoCode(isoCode)
+                .orElseThrow(() -> new RuntimeException("Country not found with ISO code: " + isoCode));
+        return country.getName();
+    }
 }

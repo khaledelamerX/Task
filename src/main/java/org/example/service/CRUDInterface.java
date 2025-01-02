@@ -12,4 +12,6 @@ public interface CRUDInterface<T> {
     T create(T t);
 
     T updateById(T t, Long id);
+
+    String getName(String isoCode);
 }

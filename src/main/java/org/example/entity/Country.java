@@ -24,6 +24,10 @@ public class Country implements Serializable {
     @Column(name = "IsoCode", nullable = false, length = 255)
     private String isoCode;
 
+    @Column(name = "name",nullable = false)
+    private String name;
+
+
     @OneToMany(mappedBy = "country", targetEntity = Company.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
